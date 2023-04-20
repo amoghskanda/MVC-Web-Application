@@ -4,15 +4,92 @@
 <meta charset="ISO-8859-1">
 <title>OOAD ASSIGNMENT</title>
 <title>NEW STUDENT</title>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;900&display=swap');
+	body {
+		/* background-color: #f5f5f5; */
+		background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+		/* font-family: Arial, sans-serif; */
+		font-family: 'Nunito', sans-serif;
+		font-size: 14px;
+		line-height: 1.5;
+		margin: 0;
+		padding: 0;
+	}
+	.container {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 30px;
+	}
+	h1 {
+		font-size: 36px;
+		margin: 0 0 30px;
+		text-align: center;
+	}
+	.add-button {
+		display: block;
+		width: 200px;
+		height: 40px;
+		margin: 0 auto 30px;
+		text-align: center;
+		background-color: #4CAF50;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		font-size: 16px;
+		line-height: 40px;
+		text-decoration: none;
+		transition: background-color .3s ease;
+	}
+	.add-button:hover {
+		background-color: #3e8e41;
+	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-bottom: 30px;
+	}
+	th, td {
+		text-align: left;
+		padding: 15px;
+		border-bottom: 1px solid #ddd;
+	}
+	th {
+		background-color: #2C363F;
+		color: #fff;
+	}
+	tr:hover {
+		background-color: #EAE2B7;
+	}
+	.action-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.action-links a {
+		display: block;
+		text-decoration: none;
+		color: #6b4caf;
+		transition: color .3s ease;
+	}
+	.action-links a:hover {
+		color: #513e8e;
+	}
+	.fa {
+		margin-right: 5px;
+	}
+</style>
+
 </head>
 <body>
 	<div align="center">
-		<h1>NEW STUDENT DETAILS</h1>
+		<h1 style="font-family:'Libre Baskerville', serif;">NEW STUDENT DETAILS</h1>
 		<br />
 		<form action="#" th:action="@{/save}" th:object="${student}"
 			method="post">
 
-			<table border="2" cellpadding="10">
+			<table border="5" cellpadding="10">
 				<tr>
 					<td>Student ID:</td>
 					<td><input type="text" th:field="*{id}" /></td>
