@@ -31,7 +31,7 @@ jobs:
       
     - name: Run project
     
-      run: java -jar /home/ec2-user/actions-runner/_work/MVC-Web-Application/MVC-Web-Application/target/demo-0.0.1-SNAPSHOT.jar
+      run: sudo systemctl restart java_project
 
 
 #     - name: Publish to GitHub Packages Apache Maven
