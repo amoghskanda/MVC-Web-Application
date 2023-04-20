@@ -82,14 +82,14 @@
 </style>
 
 </head>
-<body>
+<body style="background-repeat: no-repeat;height:100vh;">
 	<div align="center">
 		<h1 style="font-family:'Libre Baskerville', serif;">NEW STUDENT DETAILS</h1>
 		<br />
 		<form action="#" th:action="@{/save}" th:object="${student}"
 			method="post">
 
-			<table border="5" cellpadding="10">
+			<table border="none" cellpadding="10">
 				<tr>
 					<td>Student ID:</td>
 					<td><input type="text" th:field="*{id}" /></td>
