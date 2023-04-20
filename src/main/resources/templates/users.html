@@ -1,0 +1,118 @@
+<!-- <!-- <html>
+    <head>
+        <title>OOAD Assignment</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        </head>
+        <body>
+        
+        <h1>Welcome to GYI(Get your info)</h1>
+        <body>
+            <div class="dropdown">
+                <button onclick="toggleDropdown()">CRUD</button>
+                <div id="dropdown-content">
+                    <a href="#">Create</a>
+                    <a href="#">Read</a>
+                    <a href="#">Update</a>
+                    <a href="#">Delete</a>
+                </div>
+            </div>
+            <script src="index.js"></script>
+        </body>
+        
+        </body>
+        </html> -->
+
+        <!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>OOAD assignment</title>
+	<script>
+		function handleOperation() {
+			var operation = document.getElementById("operation").value;
+			var id = document.getElementById("id").value;
+			var name = document.getElementById("name").value;
+			var birthdate = document.getElementById("birthdate").value;
+			var location = document.getElementById("location").value;
+
+			if(operation == "create") {
+				window.location.href = "/create";
+                // page?id=" + id + "&name=" + name + "&birthdate=" + birthdate + "&location=" + location;
+			} else if(operation == "read") {
+				window.location.href = "/readpage?id=" + id;
+			} else if(operation == "update") {
+				window.location.href = "/updatepage?id=" + id + "&name=" + name + "&birthdate=" + birthdate + "&location=" + location;
+			} else if(operation == "delete") {
+				window.location.href = "/deletepage?id=" + id;
+			}
+		}
+	</script>
+</head>
+<body>
+	<label for="operation">Select operation:</label>
+	<select id="operation">
+		<option value="create">Create</option>
+		<option value="read">Read</option>
+		<option value="update">Update</option>
+		<option value="delete">Delete</option>
+	</select>
+	<br><br>
+	<label for="id">ID:</label>
+	<input type="text" id="id"><br><br>
+	<label for="name">Name:</label>
+	<input type="text" id="name"><br><br>
+	<label for="birthdate">Birthdate:</label>
+	<input type="text" id="birthdate"><br><br>
+	<label for="location">Location:</label>
+	<input type="text" id="location"><br><br>
+	<button onclick="handleOperation()">Submit</button>
+</body>
+</html> --> 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><br>
+                <th>Name</th>
+                <th>Birthdate</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over all users and display their information -->
+            <th:block th:each="user : ${users}">
+                <tr>
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.birthdate}"></td>
+                    <td th:text="${user.location}"></td>
+                    <td>
+                        <form method="get" th:action="@{/users/{id}(id=${user.id})}">
+                            <button type="submit">View</button>
+                        </form>
+                        <form method="get" th:action="@{/users/{id}/edit(id=${user.id})}">
+                            <button type="submit">Edit</button>
+                        </form>
+                        <form method="post" th:action="@{/users/{id}/delete(id=${user.id})}">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+    <form method="get" th:action="@{/users/new}">
+        <button type="submit">Add User</button>
+    </form>
+</body>
+</html>
+
+
