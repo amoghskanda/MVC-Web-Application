@@ -16,15 +16,25 @@ private Long id;
 private String name;
 private String birthdate;
 private String location;
+private String gender;
 
 public Student(){
     
 }
 
-public Student(String name, String birthdate, String location) {
+public Student(String name, String birthdate, String location, String gender) {
     this.name = name;
     this.birthdate = birthdate;
     this.location = location;
+    this.gender = gender;
+}
+
+public String getGender() {
+    return gender;
+}
+
+public void setGender(String gender) {
+    this.gender = gender;
 }
 
 public Long getId() {

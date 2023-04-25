@@ -97,6 +97,7 @@
 					<th>Student Name</th>
                     <th>Student Birthdate</th>
 					<th>Student Location</th>
+                    <th>Gender</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -106,6 +107,7 @@
 					<td th:text="${student.name}" style="font-size: 16px;">Student Name</td>
                     <td th:text="${student.birthdate}"style="font-size: 16px;">Student Birthdate</td>
 					<td th:text="${student.location}" style="font-size: 16px;">Student Location</td>
+                    <td th:text="${student.gender}" style="font-size: 16px;">Gender</td>
 					<td>					
 						<a th:href="@{'/edit/' + ${student.id}}">UPDATE</a>
 						&nbsp;&nbsp;&nbsp;
